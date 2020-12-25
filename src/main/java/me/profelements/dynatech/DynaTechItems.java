@@ -93,7 +93,7 @@ public class DynaTechItems {
             Material.OBSIDIAN,
             "&6反重力气泡",
             "",
-            "&f在45个方块内进行飞行"
+            "&f在45个方块内进行飞行",
             "",
             "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
