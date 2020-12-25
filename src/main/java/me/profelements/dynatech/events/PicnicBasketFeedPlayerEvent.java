@@ -50,8 +50,8 @@ public class PicnicBasketFeedPlayerEvent extends PlayerEvent implements Cancella
 
     @Nonnull
     public void setConsumedItem(@Nonnull ItemStack item) {
-        Validate.notNull(item, "Consumed item can not be null.");
-        Validate.isTrue(item.getType().isEdible(), "Item must be edible.");
+        Validate.notNull(item, "消耗品不能为空.");
+        Validate.isTrue(item.getType().isEdible(), "物品必须是可食用的.");
 
         this.itemConsumed = item;
     }
