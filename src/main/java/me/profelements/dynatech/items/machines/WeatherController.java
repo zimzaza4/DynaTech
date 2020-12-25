@@ -67,7 +67,7 @@ public class WeatherController extends AMachine {
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> items = new ArrayList<>();
         items.add(new ItemStack(Material.SUNFLOWER));
-        items.add(new CustomItem(Material.DIAMOND, "Makes its sunny in philadelphia."));
+        items.add(new CustomItem(Material.DIAMOND, "使它充满阳光."));
 
         items.add(new ItemStack(Material.LILAC));
         items.add(new CustomItem(Material.DIAMOND, "Makes its rain while the old man snores"));
