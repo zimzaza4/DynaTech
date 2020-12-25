@@ -356,21 +356,21 @@ public abstract class AMachine extends SlimefunItem implements EnergyNetComponen
     }
 
     public final AMachine setEnergyCapacity(int capacity) {
-        Validate.isTrue(capacity > 0, "Energy capacity must be greater then 0");
+        Validate.isTrue(capacity > 0, "能量容量必须大于0");
 
         if(getState() == ItemState.UNREGISTERED) {
             this.energyCapacity = capacity;
             return this;
         } else {
-            throw new IllegalStateException("You cannot modify already registered items.");
+            throw new IllegalStateException("您无法修改已注册的项目");
         }
 
     }
 
     public final AMachine setEnergyConsumption(int energyConsumption) {
-        Validate.isTrue(energyConsumption > 0, "Energy consumption must be greater then 0");
-        Validate.isTrue(energyCapacity > 0, "Energy capacity must be specified before energy consumption");
-        Validate.isTrue(energyConsumption <= energyCapacity, "Energy consumption can not be greater the energy capacity.");
+        Validate.isTrue(energyConsumption > 0, "能耗必须大于0");
+        Validate.isTrue(energyCapacity > 0, "能耗之前必须指定能量容量");
+        Validate.isTrue(energyConsumption <= energyCapacity, "能源消耗不能大于能源容量");
 
         this.energyConsumedPerTick = energyConsumption;
         return this;
@@ -378,7 +378,7 @@ public abstract class AMachine extends SlimefunItem implements EnergyNetComponen
     }
 
     public final AMachine setProcessingSpeed(int processingSpeed) {
-        Validate.isTrue(processingSpeed > 0, "Processing speed must be greater then 0");
+        Validate.isTrue(processingSpeed > 0, "处理速度必须大于0");
 
         this.processingSpeed = processingSpeed;
         return this;
@@ -390,18 +390,18 @@ public abstract class AMachine extends SlimefunItem implements EnergyNetComponen
         this.addon = slimefunAddon;
 
         if (getCapacity() <= 0) {
-            warn("The capacity has not been configured correctly. The Item was disabled.");
-            warn("Make sure to call '" + getClass().getSimpleName() + "#setEnergyCapacity(...)' before registering!");
+            warn("容量配置不正确。 该项目已被禁用");
+            warn("确保 '" + getClass().getSimpleName() + "#setEnergyCapacity(...)' 在注册之前!");
         }
 
         if (getEnergyConsumption() <= 0) {
-            warn("The energy consumption has not been configured correctly. The Item was disabled.");
-            warn("Make sure to call '" + getClass().getSimpleName() + "#setEnergyConsumption(...)' before registering!");
+            warn("能耗配置不正确。 该项目已被禁用");
+            warn("确保 '" + getClass().getSimpleName() + "#setEnergyConsumption(...)' 在注册之前!");
         }
 
         if (getSpeed() <= 0) {
-            warn("The processing speed has not been configured correctly. The Item was disabled.");
-            warn("Make sure to call '" + getClass().getSimpleName() + "#setProcessingSpeed(...)' before registering!");
+            warn("处理速度未正确配置。 该项目已被禁用");
+            warn("确保 '" + getClass().getSimpleName() + "#setProcessingSpeed(...)' 在注册之前!");
         }
 
         if (getCapacity() > 0 && getEnergyConsumption() > 0 && getSpeed() > 0) {
